@@ -715,6 +715,10 @@ class Atomic(object):
             return
 
         _images = self.get_images()
+        if not _images:
+            self.writeOut("There are no images available.")
+            return
+
         _max_repo, _max_tag = get_col_lengths(_images)
         col_out = "{0:" + str(_max_repo) + "} {1:" + str(_max_tag) + \
                   "} {2:12} {3:19} {4:10}"
