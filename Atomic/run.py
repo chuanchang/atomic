@@ -86,7 +86,7 @@ class Run(Atomic):
             if self.args.display:
                 return self.display("Need to pull %s" % self.image)
 
-            self.update()
+            self.pull()
             self.inspect = self._inspect_image()
 
         if self.spc:
